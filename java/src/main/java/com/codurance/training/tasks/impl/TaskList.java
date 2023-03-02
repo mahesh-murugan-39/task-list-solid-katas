@@ -20,13 +20,13 @@ public final class TaskList implements Runnable {
     private final BufferedReader in;
     private final PrintWriter out;
 
-    public AddTaskService addService;
+    private final AddTaskService addService;
 
-    public CheckTaskService checkService;
+    private final CheckTaskService checkService;
 
-    public DeleteTaskService deleteService;
+    private final DeleteTaskService deleteService;
 
-    public ViewTaskService viewService;
+    private final ViewTaskService viewService;
 
     public static void main(String[] args) throws Exception {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
