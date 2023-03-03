@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
 import java.io.PrintWriter;
+
+import com.codurance.training.tasks.impl.TaskList;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -56,43 +58,43 @@ public final class ApplicationTest {
         execute("show");
 
         execute("add project secrets");
-        execute("add task secrets Eat more donuts.");
-        execute("add task secrets Destroy all humans.");
+        execute("add task A1 secrets Eat more donuts.");
+        execute("add task A2 secrets Destroy all humans.");
 
         execute("show");
         readLines(
             "secrets",
-            "    [ ] 1: Eat more donuts.",
-            "    [ ] 2: Destroy all humans.",
+            "    [ ] A1: Eat more donuts.",
+            "    [ ] A2: Destroy all humans.",
             ""
         );
 
         execute("add project training");
-        execute("add task training Four Elements of Simple Design");
-        execute("add task training SOLID");
-        execute("add task training Coupling and Cohesion");
-        execute("add task training Primitive Obsession");
-        execute("add task training Outside-In TDD");
-        execute("add task training Interaction-Driven Design");
+        execute("add task A3 training Four Elements of Simple Design");
+        execute("add task A4 training SOLID");
+        execute("add task A5 training Coupling and Cohesion");
+        execute("add task A6 training Primitive Obsession");
+        execute("add task A7 training Outside-In TDD");
+        execute("add task A8 training Interaction-Driven Design");
 
-        execute("check 1");
-        execute("check 3");
-        execute("check 5");
-        execute("check 6");
+        execute("check A1");
+        execute("check A3");
+        execute("check A5");
+        execute("check A6");
 
         execute("show");
         readLines(
                 "secrets",
-                "    [x] 1: Eat more donuts.",
-                "    [ ] 2: Destroy all humans.",
+                "    [x] A1: Eat more donuts.",
+                "    [ ] A2: Destroy all humans.",
                 "",
                 "training",
-                "    [x] 3: Four Elements of Simple Design",
-                "    [ ] 4: SOLID",
-                "    [x] 5: Coupling and Cohesion",
-                "    [x] 6: Primitive Obsession",
-                "    [ ] 7: Outside-In TDD",
-                "    [ ] 8: Interaction-Driven Design",
+                "    [x] A3: Four Elements of Simple Design",
+                "    [ ] A4: SOLID",
+                "    [x] A5: Coupling and Cohesion",
+                "    [x] A6: Primitive Obsession",
+                "    [ ] A7: Outside-In TDD",
+                "    [ ] A8: Interaction-Driven Design",
                 ""
         );
 
